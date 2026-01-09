@@ -1,0 +1,1027 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #000220 ,#000213 ,#00020f, #00010a, #000, #000);
+    overflow: hidden;
+}
+
+/*LATIDO*/
+
+
+
+
+/*ESTRELLAS*/
+
+.container{
+    background-image: linear-gradient(to bottom, #1f0031 ,#000220 ,#000213 ,#00020f, #00010a, #000, #000, #000);
+    position: fixed;
+    inset: 0;
+}
+
+.space{
+    --size: 3px;
+    --space-layer:
+        4vw 50vh 0 white,
+        18vw 88vh 0 white;
+
+    width: var(--size);
+    height: var(--size);
+    background-color: white;
+    box-shadow: var(--space-layer);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 65%;
+    animation: moveStars var(--duration, 20s) linear infinite;
+    animation-delay: -2s;
+}
+@keyframes moveStars {
+    from{ transform: translateX(0) translateY(0);}
+    to { transform: translateX(0vw) translateY(100vh);}
+}
+
+/*ESTRELLAS*/
+
+.flowers{
+    position: relative;
+    transform: scale(0.9);
+    z-index: 2;
+}
+
+.flower{
+    position: absolute;
+    transform-origin: bottom center;
+    z-index: 50;
+    opacity: 0;
+    bottom: 5vmin;
+    animation:
+        flower-appear 0.9s ease-out forwards,
+        moving-flower-1 2.5s linear infinite;
+}
+
+
+
+.flower__leafs {
+    position: relative;
+    animation: blooming-flower 2s backwards;
+}
+
+.flower__leafs--1 {
+    animation-delay: 1.1s;
+}
+
+.flower__leafs::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -100%);
+    width: 5vmin;
+    height: 5vmin;
+    background-color: purple;
+    filter: blur(5vmin);
+}
+
+.flower_leaf{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /*23 Y 6*/
+    width: 17.8vmin;
+    height: 4.46vmin;
+    border-radius: 60% 40% 60% 40%;
+    background-color: purple;
+    background-image: linear-gradient(to top rgb(83, 25, 83), rgb(255, 0, 221), rgb(255, 0, 255));
+    transform-origin: bottom center;
+    opacity: 0.95;
+    box-shadow: inset 0 0 1vmin rgba(208, 85, 212, 0.7), 0 0 3vmin rgb(116, 0, 131);
+    z-index: 99;
+}
+
+.flower__white-circle{
+    position: absolute;
+    left: -4vmin;
+    top: -4vmin;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: rgb(41, 0, 41);
+    background-image: radial-gradient(circle at 30% 30%m rgb(65, 0, 65), rgb(161, 0, 161), rgb(33, 0, 37));
+    box-shadow: inset 0 0 2vmin rgba(0, 0, 0, 0.8), 0 0 1vmin rgb(58, 22, 58);
+}
+
+.flower__white-circle::after{
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    z-index: 100;
+    border-radius: inherit;
+    background-image: repeating-conic-gradient(
+        from 0deg,
+        rgb(17, 0, 19) 0deg 15deg,
+        rgb(49, 0, 49) 15deg 30deg
+    ),
+    radial-gradient(circle at center, rgb(41, 0, 41), rgb(65, 0, 65));
+}
+.flower--19 .flower__white-circle::after{
+    left: 80%;
+    top: 70%;
+}
+
+.flower__light {
+    position: absolute;
+    bottom: 0vmin;
+    width: 0.8vmin;
+    height: 0.6vmin;
+    background-color: rgb(41, 0, 41);
+    border-radius: 50%;
+    filter: blur(0.1vmin);
+    animation: sunflower-seeds 6s linear infinite backwards;
+    box-shadow: 0 0 1vmin rgb(51, 15, 51);
+}
+.flower--19 .flower__light{
+    position: absolute;
+    bottom: 0vmin;
+    width: 0.8vmin;
+    height: 1vmin;
+    background-color: rgb(41, 0, 41);
+    border-radius: 50%;
+    filter: blur(0.1vmin);
+    animation: sunflower-seeds 6s linear infinite backwards;
+    box-shadow: 0 0 1vmin rgb(51, 15, 51);
+}
+
+.flower__light:nth-child(odd){
+    background-color: rgb(49, 0, 49);
+}
+
+.flower__light--1 {
+    left: -2vmin;
+    animation-delay: 1s;
+}
+
+.flower__light--2 {
+    left: 3vmin;
+    animation-delay: 0.5s;
+}
+
+.flower__light--3 {
+    left: -6vmin;
+    animation-delay: 0.3s;
+}
+
+.flower__light--4 {
+    left: 6vmin;
+    animation-delay: 0.9s;
+}
+
+.flower__light--5 {
+    left: 1vmin;
+    animation-delay: 1.5s;
+}
+
+.flower__light--6 {
+    left: -4vmin;
+    animation-delay: 3s;
+}
+
+.flower__light--7 {
+    left: -3vmin;
+    animation-delay: 2s;
+}
+
+.flower__light--8 {
+    left: -6vmin;
+    animation-delay: 3.5s;
+}
+
+@keyframes sunflower-seeds {
+
+    0% {
+        opacity: 0;
+        transform: translateY(0vmin) rotate(0deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(-3vmin) translateX(-1vmin) rotate(45deg);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateY(-8vmin) translateX(-1vmin) rotate(90deg);
+    } 
+
+    60% {
+        transform: translateY(-12vmin) translateX(-1vmin) rotate(135deg);
+    } 
+
+    80% {
+        opacity: 0.5;
+        transform: translateY(-16vmin) translateX(2vmin) rotate(180deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-25vmin) rotate(255deg);
+    }
+}
+
+@keyframes moving-flower-1{
+    0%, 100% {
+        transform: rotate(6deg);
+    }
+    50%{
+        transform: rotate(-6deg);
+    }
+}
+
+@keyframes blooming-flower{
+    0%{
+        transform: scale(0);
+    }
+}
+
+:root {
+  --f1-speed: 1.6s;
+}
+
+
+
+
+.flower--1 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s  backwards;
+}
+
+.flower--1 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s  backwards;
+}
+
+.flower--1 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s  backwards;
+}
+
+.flower--1 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s  backwards;
+}
+
+.flower__line {
+    height: 18vmin;
+    width: 2.04vmin;
+    background-image: linear-gradient(
+        to left,
+        rgb(0, 0, 0, 0.3),
+        transparent,
+        rgba(255, 255, 255, 0.2)
+    ),
+    linear-gradient(to top, #2d5016, #4a7c23, #5b8e23);
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.7);
+    animation: grow-flower-tree 4s backwards;
+}
+
+.flower__line__leaf {
+    --w: 5.44vmin;
+    --h: calc(var(--w) + 2vmin);
+    position: absolute;
+    top: 20%;
+    left: 110%;
+    width: var(--w);
+    height: var(--h);
+    border-top-right-radius: var(--h);
+    border-bottom-left-radius: var(--h);
+    background-image: linear-gradient(
+        to top,
+        rgba(45, 80, 22, 0.6),
+        #4a7c23,
+        #5b8e23
+    );
+    box-shadow: insert 0 0 1vmin rgba(0, 0, 0, 0.3);
+}
+
+.flower__line__leaf--1{
+    transform: rotate(70deg) rotateY(30deg);
+}
+
+.flower__line__leaf--2{
+    top: 45%;
+    transform: rotate(70deg) rotateY(30deg);
+}
+
+.flower__line__leaf--3,
+.flower__line__leaf--4{
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius:var(--h);
+    border-bottom-right-radius: var(--h);
+    left: -320%;
+    top: 25%;
+    transform: rotate(-70deg) rotateY(30deg);
+}
+
+.flower__line__leaf--4 {
+    top: 40%;
+}
+
+@keyframes blooming-leaf-right {
+    0% {
+        transform-origin: left;
+        transform: rotate(70deg) rotateY(30deg) scale(0);
+    }
+}
+
+@keyframes blooming-leaf-left {
+    0% {
+        transform-origin: right;
+        transform: rotate(-70deg) rotateY(30deg) scale(0);
+    }
+}
+
+@keyframes grow-flower-tree {
+    0% {
+        height: 0;
+        border-radius: 1vmin;
+    }
+}
+
+
+
+
+
+/*ALTURA DE LAS FLORES*/
+.flower--1 .flower__line{
+    height: 17vmin;
+    animation-delay: 0.3s;
+}
+.flower--2 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--3 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--4 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--5 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--6 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--7 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--8 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--9 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--10 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--11 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--12 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--13 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--14 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--15 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--16 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--17 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--18 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--19 .flower__line{
+    height: 23vmin;
+    animation-delay: 0.3s;
+}
+.flower--20 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--21 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--22 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--23 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--24 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+.flower--25 .flower__line{
+    height: 15vmin;
+    animation-delay: 0.3s;
+}
+
+
+
+
+
+/*ANIMACION DE LADO A LADO
+.flower--2{
+    animation: moving-flower-1 4s linear infinite;
+}
+*/
+.flower--1  { animation-delay: 0s, 0s; }
+.flower--2  { animation-delay: 0.4s, 0s; }
+.flower--3  { animation-delay: 1.5s, 0s; }
+.flower--4  { animation-delay: 1s, 0s; }
+.flower--5  { animation-delay: 3s,  0s; }
+.flower--6  { animation-delay: 2s,  0s; }
+.flower--7  { animation-delay: 5s, 0s; }
+.flower--8  { animation-delay: 1.8s, 0s; }
+.flower--9  { animation-delay: 2.2s,  0s; }
+.flower--10 { animation-delay: 3.6s,  0s; }
+.flower--11  { animation-delay: 4s,  0s; }
+.flower--12 { animation-delay: 3.9s, 0s; }
+.flower--13  { animation-delay: 4.8s, 0s; }
+.flower--14  { animation-delay: 1.9s,  0s; }
+.flower--15  { animation-delay: 5.6s,  0s; }
+.flower--16 { animation-delay: 6s,  0s; }
+.flower--17 { animation-delay: 6.4s, 0s; }
+.flower--18 { animation-delay: 6.5s, 0s; }
+.flower--19 { animation-delay: 6.8s,  0s; }
+.flower--20 { animation-delay: 7.2s,  0s; }
+.flower--21 { animation-delay: 7.2s,  0s; }
+.flower--22 { animation-delay: 7.6s,  0s; }
+.flower--23 { animation-delay: 7.6s,  0s; }
+.flower--24 { animation-delay: 8s,  0s; }
+.flower--25 { animation-delay: 8s,  0s; }
+
+
+@keyframes flower-appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*ANIMACION DE SALIDA*/
+.flower--2 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s  backwards;
+}
+
+.flower--2 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s  backwards;
+}
+
+.flower--2 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s  backwards;
+}
+
+.flower--2 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s  backwards;
+}
+
+
+.flower--3 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s  backwards;
+}
+
+.flower--3 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s  backwards;
+}
+
+.flower--3 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s  backwards;
+}
+
+.flower--3 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s  backwards;
+}
+
+
+.flower--4 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s  backwards;
+}
+
+.flower--4 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s  backwards;
+}
+
+.flower--4 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s  backwards;
+}
+
+.flower--4 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s  backwards;
+}
+
+
+.flower--5 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s  backwards;
+}
+
+.flower--5 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s  backwards;
+}
+
+.flower--5 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s  backwards;
+}
+
+.flower--5 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s  backwards;
+}
+
+
+.flower--6 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s  backwards;
+}
+
+.flower--6 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s  backwards;
+}
+
+.flower--6 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s  backwards;
+}
+
+.flower--6 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s  backwards;
+}
+
+
+.flower--7 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--7 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--7 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--7 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--8 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--8 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--8 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--8 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--9 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--9 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--9 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--9 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--10 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--10 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--10 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--10 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--11 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--11 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--11 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--11 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--12 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--12 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--12 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--12 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--13 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--13 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--13 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--13 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--14 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--14 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--14 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--14 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--15 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--15 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--15 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--15 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--16 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--16 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--16 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--16 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--17 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--17 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--17 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--17 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--18 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--18 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--18 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--18 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--19 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--19 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--19 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--19 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--20 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--20 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--20 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--20 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--21 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--21 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--21 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--21 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--22 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--22 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--22 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--22 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--23 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--23 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--23 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--23 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--24 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--24 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--24 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--24 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+.flower--25 .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower--25 .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower--25 .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower--25 .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+
+
+/*DISTANCIA HORIZONTAL Y VERTICAL DE FLORES*/
+
+.flower--2{
+    left: 9vmin;
+    bottom: 13vmin;
+}
+.flower--3{
+    right: 9vmin;
+    bottom: 13vmin;
+}
+.flower--4{
+    left: 18vmin;
+    bottom: 21vmin;
+}
+.flower--5{
+    right: 18vmin;
+    bottom: 21vmin;
+}
+.flower--6{
+    left: 27vmin;
+    bottom: 30vmin;
+}
+.flower--7{
+    right: 27vmin;
+    bottom: 30vmin;
+}
+.flower--8{
+    left: 36vmin;
+    bottom: 39vmin;
+}
+.flower--9{
+    right: 36vmin;
+    bottom: 39vmin;
+}
+.flower--10{
+    left: 40vmin;
+    bottom: 53vmin;
+}
+.flower--11{
+    right: 40vmin;
+    bottom: 53vmin;
+}
+.flower--12{
+    left: 33vmin;
+    bottom: 68vmin;
+}
+.flower--13{
+    right: 33vmin;
+    bottom: 68vmin;
+}
+.flower--14{
+    left: 21vmin;
+    bottom: 73vmin;
+}
+.flower--15{
+    right: 21vmin;
+    bottom: 73vmin;
+}
+.flower--16{
+    left: 10vmin;
+    bottom: 65vmin;
+}
+.flower--17{
+    right: 10vmin;
+    bottom: 65vmin;
+}
+.flower--18{
+    bottom: 58vmin;
+}
+.flower--19{
+    bottom: 58vmin;
+}
+.flower--20{
+    left: 22vmin;
+    bottom: 66vmin;
+}
+.flower--21{
+    right: 22vmin;
+    bottom: 66vmin;
+}
+.flower--22{
+    left: 16vmin;
+    bottom: 50vmin;
+}
+.flower--23{
+    right: 16vmin;
+    bottom: 50vmin;
+}
+.flower--24{
+    left: 6vmin;
+    bottom: 40vmin;
+}
+.flower--25{
+    right: 6vmin;
+    bottom: 40vmin;
+}
+
+
+/* CIRCULO NEGRO DE FLORES SIN TALLO*/
+.flower--19 .flower__white-circle::after{
+    left: 80%;
+    top: 70%;
+}
+.flower--20 .flower__white-circle::after{
+    left: 80%;
+    top: 70%;
+}
+.flower--21 .flower__white-circle::after{
+    left: 80%;
+    top: 70%;
+}
+.flower--22 .flower__white-circle::after{
+    left: 80%;
+    top: 70%;
+}
+.flower--23 .flower__white-circle::after{
+    left: 80%;
+    top: 70%;
+}
+.flower--24 .flower__white-circle::after{
+    left: 80%;
+    top: 70%;
+}
+.flower--25 .flower__white-circle::after{
+    left: 80%;
+    top: 70%;
+}
+
+/*TAMAÑO DE PETALOS DE FLORES SIN TALLO*/
+.flower--19 .flower_leaf{
+    /*23 Y 6*/
+    width: 25vmin;
+    height: 6.52vmin;
+}
+.flower--20 .flower_leaf{
+    /*23 Y 6*/
+    width: 25vmin;
+    height: 6.52vmin;
+}
+.flower--21 .flower_leaf{
+    /*23 Y 6*/
+    width: 25vmin;
+    height: 6.52vmin;
+}
+.flower--22 .flower_leaf{
+    /*23 Y 6*/
+    width: 25vmin;
+    height: 6.52vmin;
+}
+.flower--23 .flower_leaf{
+    /*23 Y 6*/
+    width: 25vmin;
+    height: 6.52vmin;
+}
+.flower--24 .flower_leaf{
+    /*23 Y 6*/
+    width: 25vmin;
+    height: 6.52vmin;
+}
+.flower--25 .flower_leaf{
+    /*23 Y 6*/
+    width: 25vmin;
+    height: 6.52vmin;
+}
