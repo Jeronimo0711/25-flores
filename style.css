@@ -1247,10 +1247,11 @@ body {
   border-radius: inherit;
   animation: pulseOut 2s ease-out infinite;
   opacity: 0;
+  animation-delay: 7s;
 }
 
 .neon-pulse::after {
-  animation-delay: 4s;
+  animation-delay: 7s;
 }
 
 @keyframes pulseOut {
