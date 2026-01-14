@@ -14,11 +14,6 @@ body {
     overflow: hidden;
 }
 
-/*LATIDO*/
-
-
-
-
 /*ESTRELLAS*/
 
 .container{
@@ -42,14 +37,16 @@ body {
     left: 0;
     opacity: 65%;
     animation: moveStars var(--duration, 20s) linear infinite;
-    animation-delay: -2s;
+    animation-delay: 7s;
 }
+
 @keyframes moveStars {
     from{ transform: translateX(0) translateY(0);}
     to { transform: translateX(0vw) translateY(100vh);}
 }
 
 /*ESTRELLAS*/
+
 
 .flowers{
     position: relative;
@@ -64,10 +61,15 @@ body {
     opacity: 0;
     bottom: 5vmin;
     animation:
-        flower-appear 0.9s ease-out forwards,
-        moving-flower-1 2.5s linear infinite;
+        flower-appear 1s ease-out forwards,
+        moving-flower-1 7s linear infinite;
 }
 
+@media (max-width: 768px) {
+    .flowers {
+        top: -20vh;
+    }
+}
 
 
 .flower__leafs {
@@ -100,7 +102,7 @@ body {
     height: 4.46vmin;
     border-radius: 60% 40% 60% 40%;
     background-color: purple;
-    background-image: linear-gradient(to top rgb(83, 25, 83), rgb(255, 0, 221), rgb(255, 0, 255));
+    background-image: linear-gradient(to top, rgb(104, 17, 104), rgb(129, 0, 112), rgb(179, 0, 179));
     transform-origin: bottom center;
     opacity: 0.95;
     box-shadow: inset 0 0 1vmin rgba(208, 85, 212, 0.7), 0 0 3vmin rgb(116, 0, 131);
@@ -115,7 +117,7 @@ body {
     height: 5vmin;
     border-radius: 50%;
     background-color: rgb(41, 0, 41);
-    background-image: radial-gradient(circle at 30% 30%m rgb(65, 0, 65), rgb(161, 0, 161), rgb(33, 0, 37));
+    background-image: radial-gradient(circle at 30% 30% rgb(65, 0, 65), rgb(161, 0, 161), rgb(33, 0, 37));
     box-shadow: inset 0 0 2vmin rgba(0, 0, 0, 0.8), 0 0 1vmin rgb(58, 22, 58);
 }
 
@@ -136,6 +138,7 @@ body {
     ),
     radial-gradient(circle at center, rgb(41, 0, 41), rgb(65, 0, 65));
 }
+
 .flower--19 .flower__white-circle::after{
     left: 80%;
     top: 70%;
@@ -152,6 +155,7 @@ body {
     animation: sunflower-seeds 6s linear infinite backwards;
     box-shadow: 0 0 1vmin rgb(51, 15, 51);
 }
+
 .flower--19 .flower__light{
     position: absolute;
     bottom: 0vmin;
@@ -170,43 +174,36 @@ body {
 
 .flower__light--1 {
     left: -2vmin;
-    animation-delay: 1s;
+    animation-delay: 4s;
 }
 
 .flower__light--2 {
     left: 3vmin;
-    animation-delay: 0.5s;
+    animation-delay: 5s;
 }
 
 .flower__light--3 {
     left: -6vmin;
-    animation-delay: 0.3s;
+    animation-delay: 6s;
 }
 
-.flower__light--4 {
-    left: 6vmin;
-    animation-delay: 0.9s;
-}
 
 .flower__light--5 {
     left: 1vmin;
-    animation-delay: 1.5s;
+    animation-delay: 7s;
 }
 
 .flower__light--6 {
     left: -4vmin;
-    animation-delay: 3s;
+    animation-delay: 8s;
 }
 
 .flower__light--7 {
-    left: -3vmin;
-    animation-delay: 2s;
+    left: 4vmin;
+    animation-delay: 9s;
 }
 
-.flower__light--8 {
-    left: -6vmin;
-    animation-delay: 3.5s;
-}
+
 
 @keyframes sunflower-seeds {
 
@@ -240,6 +237,7 @@ body {
     }
 }
 
+
 @keyframes moving-flower-1{
     0%, 100% {
         transform: rotate(6deg);
@@ -248,6 +246,7 @@ body {
         transform: rotate(-6deg);
     }
 }
+
 
 @keyframes blooming-flower{
     0%{
@@ -278,6 +277,7 @@ body {
     animation: blooming-leaf-left var(--f1-speed) 1s  backwards;
 }
 
+
 .flower__line {
     height: 18vmin;
     width: 2.04vmin;
@@ -289,7 +289,7 @@ body {
     ),
     linear-gradient(to top, #2d5016, #4a7c23, #5b8e23);
     box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.7);
-    animation: grow-flower-tree 4s backwards;
+    animation: grow-flower-tree 6.8s backwards;
 }
 
 .flower__line__leaf {
@@ -308,7 +308,7 @@ body {
         #4a7c23,
         #5b8e23
     );
-    box-shadow: insert 0 0 1vmin rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 1vmin rgba(0, 0, 0, 0.3);
 }
 
 .flower__line__leaf--1{
@@ -335,6 +335,7 @@ body {
     top: 40%;
 }
 
+
 @keyframes blooming-leaf-right {
     0% {
         transform-origin: left;
@@ -342,12 +343,14 @@ body {
     }
 }
 
+
 @keyframes blooming-leaf-left {
     0% {
         transform-origin: right;
         transform: rotate(-70deg) rotateY(30deg) scale(0);
     }
 }
+
 
 @keyframes grow-flower-tree {
     0% {
@@ -358,105 +361,128 @@ body {
 
 
 
-
-
 /*ALTURA DE LAS FLORES*/
+
 .flower--1 .flower__line{
     height: 17vmin;
     animation-delay: 0.3s;
 }
+
 .flower--2 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--3 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--4 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--5 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--6 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--7 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--8 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--9 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--10 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--11 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--12 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--13 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--14 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--15 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--16 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--17 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--18 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--19 .flower__line{
     height: 23vmin;
     animation-delay: 0.3s;
 }
+
 .flower--20 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--21 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--22 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--23 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--24 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
 }
+
 .flower--25 .flower__line{
     height: 15vmin;
     animation-delay: 0.3s;
@@ -464,38 +490,106 @@ body {
 
 
 
-
-
-/*ANIMACION DE LADO A LADO
-.flower--2{
-    animation: moving-flower-1 4s linear infinite;
+.flower--1  { 
+    animation-delay: 6.5s, 0s;
 }
-*/
-.flower--1  { animation-delay: 0s, 0s; }
-.flower--2  { animation-delay: 0.4s, 0s; }
-.flower--3  { animation-delay: 1.5s, 0s; }
-.flower--4  { animation-delay: 1s, 0s; }
-.flower--5  { animation-delay: 3s,  0s; }
-.flower--6  { animation-delay: 2s,  0s; }
-.flower--7  { animation-delay: 5s, 0s; }
-.flower--8  { animation-delay: 1.8s, 0s; }
-.flower--9  { animation-delay: 2.2s,  0s; }
-.flower--10 { animation-delay: 3.6s,  0s; }
-.flower--11  { animation-delay: 4s,  0s; }
-.flower--12 { animation-delay: 3.9s, 0s; }
-.flower--13  { animation-delay: 4.8s, 0s; }
-.flower--14  { animation-delay: 1.9s,  0s; }
-.flower--15  { animation-delay: 5.6s,  0s; }
-.flower--16 { animation-delay: 6s,  0s; }
-.flower--17 { animation-delay: 6.4s, 0s; }
-.flower--18 { animation-delay: 6.5s, 0s; }
-.flower--19 { animation-delay: 6.8s,  0s; }
-.flower--20 { animation-delay: 7.2s,  0s; }
-.flower--21 { animation-delay: 7.2s,  0s; }
-.flower--22 { animation-delay: 7.6s,  0s; }
-.flower--23 { animation-delay: 7.6s,  0s; }
-.flower--24 { animation-delay: 8s,  0s; }
-.flower--25 { animation-delay: 8s,  0s; }
+
+.flower--2  { 
+    animation-delay: 6s, 0s;
+}
+
+.flower--3  { 
+    animation-delay: 6s, 0s; 
+}
+
+.flower--4  { 
+    animation-delay: 5.5s, 0s;
+}
+
+.flower--5  { 
+    animation-delay: 5.5s,  0s;
+}
+
+.flower--6  { 
+    animation-delay: 5s,  0s; 
+}
+
+.flower--7  { 
+    animation-delay: 5s, 0s; 
+}
+
+.flower--8  { 
+    animation-delay: 4.5s, 0s; 
+}
+
+.flower--9  { 
+    animation-delay: 4.5s,  0s; 
+}
+
+.flower--10 { 
+    animation-delay: 4s,  0s; 
+}
+
+.flower--11  { 
+    animation-delay: 4s,  0s; 
+}
+
+.flower--12 { 
+    animation-delay: 3.5s, 0s; 
+}
+
+.flower--13  { 
+    animation-delay: 3.5s, 0s; 
+}
+
+.flower--14  { 
+    animation-delay: 3s,  0s; 
+}
+
+.flower--15  { 
+    animation-delay: 3s,  0s; 
+}
+
+.flower--16 { 
+    animation-delay: 2.5s,  0s; 
+}
+
+.flower--17 { 
+    animation-delay: 2.5s, 0s; 
+}
+
+.flower--18 { 
+    animation-delay: 2.3s, 0s; 
+}
+
+.flower--19 { 
+    animation-delay: 2s,  0s; 
+}
+
+.flower--20 { 
+    animation-delay: 1.8s,  0s; 
+}
+
+.flower--21 { 
+    animation-delay: 1.5s,  0s; 
+}
+
+.flower--22 { 
+    animation-delay: 1.2s,  0s; 
+}
+
+.flower--23 { 
+    animation-delay: 0.9s,  0s; 
+}
+
+.flower--24 { 
+    animation-delay: 0.6s,  0s; 
+}
+
+.flower--25 { 
+    animation-delay: 0.3s,  0s; 
+}
+
 
 
 @keyframes flower-appear {
@@ -509,6 +603,7 @@ body {
 
 
 /*ANIMACION DE SALIDA*/
+
 .flower--2 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s  backwards;
 }
@@ -524,6 +619,7 @@ body {
 .flower--2 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s  backwards;
 }
+
 
 
 .flower--3 .flower__line__leaf--1 {
@@ -543,6 +639,7 @@ body {
 }
 
 
+
 .flower--4 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s  backwards;
 }
@@ -558,6 +655,7 @@ body {
 .flower--4 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s  backwards;
 }
+
 
 
 .flower--5 .flower__line__leaf--1 {
@@ -577,6 +675,7 @@ body {
 }
 
 
+
 .flower--6 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s  backwards;
 }
@@ -594,6 +693,7 @@ body {
 }
 
 
+
 .flower--7 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -606,6 +706,7 @@ body {
 .flower--7 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
+
 
 
 .flower--8 .flower__line__leaf--1 {
@@ -622,6 +723,7 @@ body {
 }
 
 
+
 .flower--9 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -634,6 +736,7 @@ body {
 .flower--9 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
+
 
 
 .flower--10 .flower__line__leaf--1 {
@@ -650,6 +753,7 @@ body {
 }
 
 
+
 .flower--11 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -662,6 +766,7 @@ body {
 .flower--11 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
+
 
 
 .flower--12 .flower__line__leaf--1 {
@@ -678,6 +783,7 @@ body {
 }
 
 
+
 .flower--13 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -690,6 +796,7 @@ body {
 .flower--13 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
+
 
 
 .flower--14 .flower__line__leaf--1 {
@@ -706,6 +813,7 @@ body {
 }
 
 
+
 .flower--15 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -718,6 +826,7 @@ body {
 .flower--15 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
+
 
 
 .flower--16 .flower__line__leaf--1 {
@@ -734,6 +843,7 @@ body {
 }
 
 
+
 .flower--17 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -746,6 +856,7 @@ body {
 .flower--17 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
+
 
 
 .flower--18 .flower__line__leaf--1 {
@@ -762,6 +873,7 @@ body {
 }
 
 
+
 .flower--19 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -774,6 +886,7 @@ body {
 .flower--19 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
+
 
 
 .flower--20 .flower__line__leaf--1 {
@@ -790,6 +903,7 @@ body {
 }
 
 
+
 .flower--21 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -802,6 +916,7 @@ body {
 .flower--21 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
+
 
 
 .flower--22 .flower__line__leaf--1 {
@@ -818,6 +933,7 @@ body {
 }
 
 
+
 .flower--23 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -830,6 +946,7 @@ body {
 .flower--23 .flower__line__leaf--4 {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
+
 
 
 .flower--24 .flower__line__leaf--1 {
@@ -846,6 +963,7 @@ body {
 }
 
 
+
 .flower--25 .flower__line__leaf--1 {
     animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
 }
@@ -859,169 +977,428 @@ body {
     animation: blooming-leaf-left var(--f1-speed) 1s backwards;
 }
 
+/* BASE
+
+.flower .flower__line__leaf--1 {
+    animation: blooming-leaf-right var(--f1-speed) 1.6s backwards;
+}
+.flower .flower__line__leaf--2 {
+    animation: blooming-leaf-right var(--f1-speed) 1.4s backwards;
+}
+.flower .flower__line__leaf--3 {
+    animation: blooming-leaf-left var(--f1-speed) 1.2s backwards;
+}
+.flower .flower__line__leaf--4 {
+    animation: blooming-leaf-left var(--f1-speed) 1s backwards;
+}
+
+*/
+
 
 
 /*DISTANCIA HORIZONTAL Y VERTICAL DE FLORES*/
 
+
+.flower--1{
+    bottom: 13vmin;
+}
+
 .flower--2{
     left: 9vmin;
-    bottom: 13vmin;
+    bottom: 22vmin;
 }
+
 .flower--3{
     right: 9vmin;
-    bottom: 13vmin;
+    bottom: 22vmin;
 }
+
 .flower--4{
     left: 18vmin;
-    bottom: 21vmin;
+    bottom: 30vmin;
 }
+
 .flower--5{
     right: 18vmin;
-    bottom: 21vmin;
+    bottom: 30vmin;
 }
+
 .flower--6{
     left: 27vmin;
-    bottom: 30vmin;
+    bottom: 39vmin;
 }
+
 .flower--7{
     right: 27vmin;
-    bottom: 30vmin;
+    bottom: 39vmin;
 }
+
 .flower--8{
     left: 36vmin;
-    bottom: 39vmin;
+    bottom: 48vmin;
 }
+
 .flower--9{
     right: 36vmin;
-    bottom: 39vmin;
+    bottom: 48vmin;
 }
+
 .flower--10{
     left: 40vmin;
-    bottom: 53vmin;
+    bottom: 62vmin;
 }
+
 .flower--11{
     right: 40vmin;
-    bottom: 53vmin;
+    bottom: 62vmin;
 }
+
 .flower--12{
     left: 33vmin;
-    bottom: 68vmin;
+    bottom: 77vmin;
 }
+
 .flower--13{
     right: 33vmin;
-    bottom: 68vmin;
+    bottom: 77vmin;
 }
+
 .flower--14{
     left: 21vmin;
-    bottom: 73vmin;
+    bottom: 82vmin;
 }
+
 .flower--15{
     right: 21vmin;
-    bottom: 73vmin;
+    bottom: 82vmin;
 }
+
 .flower--16{
     left: 10vmin;
-    bottom: 65vmin;
+    bottom: 74vmin;
 }
+
 .flower--17{
     right: 10vmin;
-    bottom: 65vmin;
+    bottom: 74vmin;
 }
+
 .flower--18{
-    bottom: 58vmin;
+    bottom: 67vmin;
 }
+
 .flower--19{
-    bottom: 58vmin;
+    bottom: 67vmin;
 }
+
 .flower--20{
     left: 22vmin;
-    bottom: 66vmin;
+    bottom: 75vmin;
 }
+
 .flower--21{
     right: 22vmin;
-    bottom: 66vmin;
+    bottom: 75vmin;
 }
+
 .flower--22{
     left: 16vmin;
-    bottom: 50vmin;
+    bottom: 59vmin;
 }
+
 .flower--23{
     right: 16vmin;
-    bottom: 50vmin;
+    bottom: 59vmin;
 }
+
 .flower--24{
     left: 6vmin;
-    bottom: 40vmin;
+    bottom: 49vmin;
 }
+
 .flower--25{
     right: 6vmin;
-    bottom: 40vmin;
+    bottom: 49vmin;
 }
 
 
 /* CIRCULO NEGRO DE FLORES SIN TALLO*/
+
 .flower--19 .flower__white-circle::after{
     left: 80%;
     top: 70%;
 }
+
 .flower--20 .flower__white-circle::after{
     left: 80%;
     top: 70%;
 }
+
 .flower--21 .flower__white-circle::after{
     left: 80%;
     top: 70%;
 }
+
 .flower--22 .flower__white-circle::after{
     left: 80%;
     top: 70%;
 }
+
 .flower--23 .flower__white-circle::after{
     left: 80%;
     top: 70%;
 }
+
 .flower--24 .flower__white-circle::after{
     left: 80%;
     top: 70%;
 }
+
 .flower--25 .flower__white-circle::after{
     left: 80%;
     top: 70%;
 }
 
+/* CIRCULO NEGRO DE FLORES SIN TALLO*/
+
+
 /*TAMAÑO DE PETALOS DE FLORES SIN TALLO*/
+
 .flower--19 .flower_leaf{
     /*23 Y 6*/
     width: 25vmin;
     height: 6.52vmin;
 }
+
 .flower--20 .flower_leaf{
     /*23 Y 6*/
     width: 25vmin;
     height: 6.52vmin;
 }
+
 .flower--21 .flower_leaf{
     /*23 Y 6*/
     width: 25vmin;
     height: 6.52vmin;
 }
+
 .flower--22 .flower_leaf{
     /*23 Y 6*/
     width: 25vmin;
     height: 6.52vmin;
 }
+
 .flower--23 .flower_leaf{
     /*23 Y 6*/
     width: 25vmin;
     height: 6.52vmin;
 }
+
 .flower--24 .flower_leaf{
     /*23 Y 6*/
     width: 25vmin;
     height: 6.52vmin;
 }
+
 .flower--25 .flower_leaf{
     /*23 Y 6*/
     width: 25vmin;
     height: 6.52vmin;
 }
+
+/*TAMAÑO DE PETALOS DE FLORES SIN TALLO*/
+
+
+
+/*BOTON*/
+
+.btn {
+  position: relative;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  z-index: 1;
+  height: 16vh;
+  width: 35vh;
+  top: 0.1vh;
+  font-size: 4vh;
+}
+
+.sub{
+    font-size: 2vh;
+}
+
+.neon-pulse {
+  background: #000;
+  border: 2px solid purple;
+  box-shadow: 0 0 10px purple;
+  overflow: visible;
+}
+
+.neon-pulse::before,
+.neon-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 2px solid purple;
+  border-radius: inherit;
+  animation: pulseOut 2s ease-out infinite;
+  opacity: 0;
+}
+
+.neon-pulse::after {
+  animation-delay: 4s;
+}
+
+@keyframes pulseOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+#miboton{
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    top: auto;
+}
+
+/*BOTON*/
+
+
+/*LETRA*/
+
+.carrusel {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+/* BASE
+.track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+
+    transform: translateX(100vw);
+    animation: carrusel 38s linear infinite;
+    animation-play-state: paused;
+}
+
+.track.activo {
+    animation-play-state: running;
+}
+
+
+@keyframes carrusel {
+    from {
+        transform: translateX(94vw);
+    }
+    to {
+        transform: translateX(-120%);
+    }
+}
+BASE */
+
+.track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    width: max-content;
+    animation: carrusel 14s linear infinite;
+    animation-play-state: paused;
+}
+
+.track.activo {
+    animation-play-state: running;
+}
+
+@keyframes carrusel {
+    from {
+        transform: translateX(105vw);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.track span {
+    font-size: 28px;
+    color: white;
+}
+.espacio_largo{
+    margin-right: 26vh;
+}
+
+/* LETRA GRANDE*/
+
+.titulo{
+    position: fixed;
+    top: 27vh;
+    z-index: 99999;
+    pointer-events: none;
+    font-size: 12vh;
+    left: 8vh;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    color: #e9d5ff;
+    text-shadow: 0 0 15px rgba(190, 126, 255, 0.678);
+}
+.subtitulo{
+    position: fixed;
+    top: 54vh;
+    z-index: 99999;
+    pointer-events: none;
+    font-size: 6vh;
+    left: 16vh;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    color: #e9d5ff;
+    text-shadow: 0 0 15px rgba(190, 126, 255, 0.678);
+}
+
+/* LETRA GRANDE*/
+
+
+/* PA CELULARES*/
+
+@media (max-width: 768px) {
+    .track {
+        animation-duration: 14s;
+    }
+    .espacio_largo{
+        margin-right: 20vh;
+    }
+    .titulo{
+        top: 5vh;
+        font-size: 5vh;
+        left: 14vh;
+    }
+    .subtitulo{
+        top: 16.5vh;
+        left: 17vh;
+        font-size: 3vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .track {
+        animation-duration: 14s;
+    }
+    .espacio_largo{
+        margin-right: 10vh;
+    }
+}
+
+/* PA CELULARES*/
