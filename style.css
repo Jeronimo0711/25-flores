@@ -1286,6 +1286,7 @@ body {
 }
 
 /* BASE
+
 .track {
     display: inline-flex;
     align-items: center;
@@ -1300,7 +1301,6 @@ body {
     animation-play-state: running;
 }
 
-
 @keyframes carrusel {
     from {
         transform: translateX(94vw);
@@ -1309,6 +1309,7 @@ body {
         transform: translateX(-120%);
     }
 }
+
 BASE */
 
 .track {

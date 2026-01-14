@@ -34,7 +34,7 @@ function handleOnClick(event) {
     if (audioIniciado) return;
     audioIniciado = true;
 
-    alert(' Mis 25 flores para ti :) \n Con MUCHO esfuerzo y amor \n Te quiero mucho 💜'
+    alert(' Mis 25 flores para ti :) \n Con MUCHO esfuerzo y amor de parte de Jero \n Te quiero mucho 💜'
 
     );
     const audio = document.getElementById("audio");
