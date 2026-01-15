@@ -1,7 +1,7 @@
 
 //ESTRELLAS//
 
-const COLORS = ["#f5f7ff", "#c084fc", "#7aa2ff"]
+const COLORS = ["#c084fc", "#7aa2ff"]
 
 const generateSpaceLayer = (size, selector, duration) => {
 
@@ -19,9 +19,8 @@ const generateSpaceLayer = (size, selector, duration) => {
     container.style.setProperty("--duration", duration);
 }
 
-generateSpaceLayer("2px", ".space-1", "21.4s");
-generateSpaceLayer("4px", ".space-2", "33.4s");
-generateSpaceLayer("6px", ".space-3", "45.4s");
+generateSpaceLayer("3px", ".space-1", "24.4s");
+generateSpaceLayer("6px", ".space-3", "42.4s");
 
 //ESTRELLAS//
 
@@ -34,7 +33,7 @@ function handleOnClick(event) {
     if (audioIniciado) return;
     audioIniciado = true;
 
-    alert(' Mis 25 flores para ti :) \n Con MUCHO esfuerzo y amor de parte de Jero \n Te quiero mucho 💜'
+    alert(' Mis 25 flores para ti :) \n Con MUCHO esfuerzo de parte de Jero \n Te quiero mucho 💜'
 
     );
     const audio = document.getElementById("audio");

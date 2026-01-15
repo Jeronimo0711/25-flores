@@ -10,14 +10,22 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background-image: linear-gradient(to bottom, #000220 ,#000213 ,#00020f, #00010a, #000, #000);
+    background-image: linear-gradient(
+    to bottom, 
+    #0b0518,
+    #000
+    );
     overflow: hidden;
 }
 
 /*ESTRELLAS*/
 
 .container{
-    background-image: linear-gradient(to bottom, #1f0031 ,#000220 ,#000213 ,#00020f, #00010a, #000, #000, #000);
+    background-image: linear-gradient(
+    to bottom, 
+    #170024,
+    #000
+    );
     position: fixed;
     inset: 0;
 }
@@ -60,16 +68,13 @@ body {
     z-index: 50;
     opacity: 0;
     bottom: 5vmin;
+    animation-fill-mode: forwards;
     animation:
         flower-appear 1s ease-out forwards,
         moving-flower-1 7s linear infinite;
 }
 
-@media (max-width: 768px) {
-    .flowers {
-        top: -20vh;
-    }
-}
+
 
 
 .flower__leafs {
@@ -105,7 +110,7 @@ body {
     background-image: linear-gradient(to top, rgb(104, 17, 104), rgb(129, 0, 112), rgb(179, 0, 179));
     transform-origin: bottom center;
     opacity: 0.95;
-    box-shadow: inset 0 0 1vmin rgba(208, 85, 212, 0.7), 0 0 3vmin rgb(116, 0, 131);
+    box-shadow: inset 0 0 1vmin rgba(208, 85, 212, 0.7), 0 0 1.5vmin rgb(116, 0, 131);
     z-index: 99;
 }
 
@@ -118,7 +123,6 @@ body {
     border-radius: 50%;
     background-color: rgb(41, 0, 41);
     background-image: radial-gradient(circle at 30% 30% rgb(65, 0, 65), rgb(161, 0, 161), rgb(33, 0, 37));
-    box-shadow: inset 0 0 2vmin rgba(0, 0, 0, 0.8), 0 0 1vmin rgb(58, 22, 58);
 }
 
 .flower__white-circle::after{
@@ -153,7 +157,6 @@ body {
     border-radius: 50%;
     filter: blur(0.1vmin);
     animation: sunflower-seeds 6s linear infinite backwards;
-    box-shadow: 0 0 1vmin rgb(51, 15, 51);
 }
 
 .flower--19 .flower__light{
@@ -165,7 +168,6 @@ body {
     border-radius: 50%;
     filter: blur(0.1vmin);
     animation: sunflower-seeds 6s linear infinite backwards;
-    box-shadow: 0 0 1vmin rgb(51, 15, 51);
 }
 
 .flower__light:nth-child(odd){
@@ -287,8 +289,10 @@ body {
         transparent,
         rgba(255, 255, 255, 0.2)
     ),
-    linear-gradient(to top, #2d5016, #4a7c23, #5b8e23);
-    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.7);
+    linear-gradient(to top,  
+    #166523,
+    #1e740d
+    );
     animation: grow-flower-tree 6.8s backwards;
 }
 
@@ -308,7 +312,6 @@ body {
         #4a7c23,
         #5b8e23
     );
-    box-shadow: inset 0 0 1vmin rgba(0, 0, 0, 0.3);
 }
 
 .flower__line__leaf--1{
@@ -495,7 +498,7 @@ body {
 }
 
 .flower--2  { 
-    animation-delay: 6s, 0s;
+    animation-delay: 6.2s, 0s;
 }
 
 .flower--3  { 
@@ -503,7 +506,7 @@ body {
 }
 
 .flower--4  { 
-    animation-delay: 5.5s, 0s;
+    animation-delay: 5.8s, 0s;
 }
 
 .flower--5  { 
@@ -511,7 +514,7 @@ body {
 }
 
 .flower--6  { 
-    animation-delay: 5s,  0s; 
+    animation-delay: 5.2s,  0s; 
 }
 
 .flower--7  { 
@@ -519,7 +522,7 @@ body {
 }
 
 .flower--8  { 
-    animation-delay: 4.5s, 0s; 
+    animation-delay: 4.8s, 0s; 
 }
 
 .flower--9  { 
@@ -527,7 +530,7 @@ body {
 }
 
 .flower--10 { 
-    animation-delay: 4s,  0s; 
+    animation-delay: 4.2s,  0s; 
 }
 
 .flower--11  { 
@@ -535,15 +538,15 @@ body {
 }
 
 .flower--12 { 
-    animation-delay: 3.5s, 0s; 
+    animation-delay: 3.8s, 0s; 
 }
 
 .flower--13  { 
-    animation-delay: 3.5s, 0s; 
+    animation-delay: 3.6s, 0s; 
 }
 
 .flower--14  { 
-    animation-delay: 3s,  0s; 
+    animation-delay: 3.3s,  0s; 
 }
 
 .flower--15  { 
@@ -551,7 +554,7 @@ body {
 }
 
 .flower--16 { 
-    animation-delay: 2.5s,  0s; 
+    animation-delay: 2.8s,  0s; 
 }
 
 .flower--17 { 
@@ -563,7 +566,7 @@ body {
 }
 
 .flower--19 { 
-    animation-delay: 2s,  0s; 
+    animation-delay: 2.1s,  0s; 
 }
 
 .flower--20 { 
@@ -1234,7 +1237,6 @@ body {
 .neon-pulse {
   background: #000;
   border: 2px solid purple;
-  box-shadow: 0 0 10px purple;
   overflow: visible;
 }
 
@@ -1245,13 +1247,13 @@ body {
   inset: -4px;
   border: 2px solid purple;
   border-radius: inherit;
-  animation: pulseOut 2s ease-out infinite;
+  animation: pulseOut 3s ease-out infinite;
   opacity: 0;
-  animation-delay: 7s;
+  animation-delay: 8s;
 }
 
 .neon-pulse::after {
-  animation-delay: 7s;
+  animation-delay: 8s;
 }
 
 @keyframes pulseOut {
@@ -1355,7 +1357,7 @@ BASE */
     text-align: center;
     font-family: "Cormorant Garamond", serif;
     color: #e9d5ff;
-    text-shadow: 0 0 15px rgba(190, 126, 255, 0.678);
+    text-shadow: 0 0 10px rgba(190, 126, 255, 0.678);
 }
 .subtitulo{
     position: fixed;
@@ -1367,7 +1369,7 @@ BASE */
     text-align: center;
     font-family: "Cormorant Garamond", serif;
     color: #e9d5ff;
-    text-shadow: 0 0 15px rgba(190, 126, 255, 0.678);
+    text-shadow: 0 0 10px rgba(190, 126, 255, 0.678);
 }
 
 /* LETRA GRANDE*/
@@ -1376,6 +1378,9 @@ BASE */
 /* PA CELULARES*/
 
 @media (max-width: 768px) {
+    .flowers {
+        top: -20vh;
+    }
     .track {
         animation-duration: 14s;
     }
@@ -1386,13 +1391,18 @@ BASE */
         top: 5vh;
         font-size: 5vh;
         left: 14vh;
+        text-shadow: 0 0 5px rgba(190, 126, 255, 0.678);
+
     }
     .subtitulo{
         top: 16.5vh;
         left: 17vh;
         font-size: 3vh;
+        text-shadow: 0 0 5px rgba(190, 126, 255, 0.678);
+
     }
 }
+
 
 @media (max-width: 480px) {
     .track {
@@ -1402,5 +1412,3 @@ BASE */
         margin-right: 10vh;
     }
 }
-
-/* PA CELULARES*/
